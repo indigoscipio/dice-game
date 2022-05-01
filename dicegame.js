@@ -5,3 +5,17 @@
     //4. the first time the user hits the refresh button, the header will guide the user to 
     //hit the refresh button.
 
+let refreshBtn = document.querySelector("button.refresh");
+let bodyBG = document.querySelector("body");
+
+refreshBtn.addEventListener("click", function(){
+    bodyBG.classList.toggle("darkbg");
+})
+
+function randomizeDice(){
+    let randomNum = Math.floor(Math.random() * 6 + 1);
+    console.log(randomNum)
+}
+
+randomizeDice();
+console.log(refreshBtn);
