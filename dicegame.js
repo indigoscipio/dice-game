@@ -11,11 +11,12 @@ let playerOneDice = document.getElementById("player-one-dice");
 let playerTwoDice = document.getElementById("player-two-dice");
 let playerOneResult = document.getElementById("player-one-result");
 let playerTwoResult = document.getElementById("player-two-result");
+let finalResultMsg = document.getElementById("final-result-message");
+let winner = document.getElementById("winner");
 
-window.addEventListener("load", function(){
-    alert("This page has been loaded.")
-})
-
+// window.addEventListener("load", function(){
+//     alert("This page has been loaded.")
+// })
 
 var imgArr = ["./images/dice-1.png","./images/dice-2.png","./images/dice-3.png","./images/dice-4.png","./images/dice-5.png","./images/dice-6.png"]
 refreshBtn.addEventListener("click", function(){
@@ -25,4 +26,14 @@ refreshBtn.addEventListener("click", function(){
     playerOneResult.textContent = randomNum1+1;
     playerTwoDice.src = imgArr[randomNum2]
     playerTwoResult.textContent = randomNum2+1;
+    finalResultMsg.classList.remove("hidden");
+    if(playerOneResult.textContent > playerTwoResult.textContent){
+        winner.textContent = "Player 1 Wins! Congratulations! 🏁";
+    }
+    else if(playerTwoResult.textContent > playerOneResult.textContent){
+        winner.textContent = "Player 2 Wins! Congratulations! 🏁";
+    }
+    else{
+        winner.textContent = "Game Draws! Try again perhaps?"
+    }
 })

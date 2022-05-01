@@ -17,6 +17,23 @@ body{
     background-color: black;
 }
 
+button{
+    border: 0px;
+    height: 72px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#final-result-message{
+    font-size: 24px;
+    background-color: black;
+    color: white;
+}
+
+.hidden{
+    display: none;
+}
+
 img{
     width: 250px;
 }
