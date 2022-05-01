@@ -7,15 +7,22 @@
 
 let refreshBtn = document.querySelector("button.refresh");
 let bodyBG = document.querySelector("body");
+let playerOneDice = document.getElementById("player-one-dice");
+let playerTwoDice = document.getElementById("player-two-dice");
+let playerOneResult = document.getElementById("player-one-result");
+let playerTwoResult = document.getElementById("player-two-result");
 
-refreshBtn.addEventListener("click", function(){
-    bodyBG.classList.toggle("darkbg");
+window.addEventListener("load", function(){
+    alert("This page has been loaded.")
 })
 
-function randomizeDice(){
-    let randomNum = Math.floor(Math.random() * 6 + 1);
-    console.log(randomNum)
-}
 
-randomizeDice();
-console.log(refreshBtn);
+var imgArr = ["./images/dice-1.png","./images/dice-2.png","./images/dice-3.png","./images/dice-4.png","./images/dice-5.png","./images/dice-6.png"]
+refreshBtn.addEventListener("click", function(){
+    let randomNum1 = Math.floor(Math.random() * 6);
+    let randomNum2 = Math.floor(Math.random() * 6);
+    playerOneDice.src = imgArr[randomNum1];
+    playerOneResult.textContent = randomNum1+1;
+    playerTwoDice.src = imgArr[randomNum2]
+    playerTwoResult.textContent = randomNum2+1;
+})
